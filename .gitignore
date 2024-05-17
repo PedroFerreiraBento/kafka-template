@@ -1,0 +1,4 @@
+data/*
+kafka_ssl/*
+*/.env
+.env

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  kafka:
+    image: apache/kafka:3.7.0
+    container_name: kafka
+    ports:
+      - 9092:9092
+      - 9093:9093
+    volumes:
+      - ./kafka_ssl:/etc/kafka/secrets
+      - ./data:/var/lib/kafka/data
+      - ./config/server.properties:/opt/kafka/config/server.properties
+      - ./config/.env:/.env
+      - ./entrypoint.sh:/entrypoint.sh
+    entrypoint: ["/entrypoint.sh"]
