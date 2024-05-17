@@ -10,10 +10,11 @@ This guide provides a step-by-step process to set up SSL for Kafka, including th
 
 ## Step 1: Create a Directory for SSL Files
 
-Create a directory to store all the SSL files.
+Create a directory to store all the SSL files and logs.
 
 ```sh
 mkdir kafka_ssl
+mkdir data
 ```
 
 ## Step 2: Create own private Certificate Authority (CA)
