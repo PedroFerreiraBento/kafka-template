@@ -1,7 +1,3 @@
-Claro, Pedro! Aqui está uma versão aprimorada do seu README:
-
----
-
 # Kafka SSL Setup Guide
 
 This guide provides a step-by-step process to set up SSL for Kafka, including the generation of keystore and truststore files and the creation of necessary credentials. This script is made for an Ubuntu OS, so you may need to adjust some commands for other operating systems.
