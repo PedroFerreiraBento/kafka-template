@@ -4,12 +4,20 @@ services:
     image: apache/kafka:3.7.0
     container_name: kafka
     ports:
+      # Broker
       - 9092:9092
+      # Controller
       - 9093:9093
     volumes:
+      # Keystore and Truststore Dir
       - ./kafka_ssl:/etc/kafka/secrets
+      # Logs Dir
       - ./data:/var/lib/kafka/data
+      # Server Configuration File
       - ./config/server.properties:/opt/kafka/config/server.properties
+      # Server Environment File
       - ./config/.env:/.env
-      - ./entrypoint.sh:/entrypoint.sh
-    entrypoint: ["/entrypoint.sh"]
+      # Server Entrypoint Scripts Folder
+      - ./config/scripts:/initialize
+    # Start Server
+    entrypoint: ["/initialize/entrypoint.sh"]
